@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="15">
+  <title>QR</title>
+</head>
+
+<body>
+  <p>Tap 6 times on Android startup screen, then point camera to this QR:</p>
+  <div id="qrcode"></div>
+  <pre id="qrdebug"></pre>
+  <script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
+  <script src="qr.js"></script>
+  <script>
+new QRCode(document.getElementById("qrcode"), {
+  width: 512,
+  height: 512,
+  text: JSON.stringify(qr)
+});
+document.getElementById("qrdebug").innerText = JSON.stringify(qr, null, 2)
+</script>
+</body>
+</html>
